@@ -6,7 +6,7 @@ for re in range(1,3):
         url = 'http://masalaseen.com'
     else:
         url = f'http://masalaseen.com/page/{re}'
-    print(url)
+    print(re)
     r1 = req.get(url).content
     s1 = bs(r1, 'html.parser')
     a = s1.find_all('a', title=True, rel=False)
