@@ -3,7 +3,10 @@
 #%22 = "
 #%3A = :
 #%2C = ,
+# v1 = j['entry_data']['PostPage'][0]['graphql']['shortcode_media']['edge_sidecar_to_children']['edges'][0]['node']['video_url']
 
+
+c =6
 
 q_hash = 'e769aa130647d2354c40ea6a439bfc08'
 iid = '5856087167'
@@ -18,7 +21,7 @@ from bs4 import BeautifulSoup as bs
 r = req.get(api_endpoint)
 r_dict = r.json()
 type(r_dict)
-c = int(input('enter key'))
+
 img = r_dict['data']['user']['edge_owner_to_timeline_media']['edges'][c]['node']['display_url']
 end_cursor = r_dict['data']['user']['edge_owner_to_timeline_media']['page_info']['end_cursor']
 shortcode = r_dict['data']['user']['edge_owner_to_timeline_media']['edges'][c]['node']['shortcode']
@@ -33,6 +36,8 @@ m = s1.find_all('script')[3].text[21:-1]
 import json
 j = json.loads(m)
 d = json.dumps(j, indent=4)
+desc =j['entry_data']['PostPage'][0]['graphql']['shortcode_media']['edge_media_to_caption']['edges'][0]['node']['text']
+print(desc)
 # v1 = j['entry_data']['PostPage'][0]['graphql']['shortcode_media']['edge_sidecar_to_children']['edges'][4]['node']['video_url']
 le = len(j['entry_data']['PostPage'][0]['graphql']['shortcode_media']['edge_sidecar_to_children']['edges'])
 for h in range(le):
