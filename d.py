@@ -1,7 +1,7 @@
 
 import requests as req
 from bs4 import BeautifulSoup as bs
-for re in range(1,3):
+for re in range(1,201):
     if re ==1:
         url = 'http://masalaseen.com'
     else:
